@@ -78,3 +78,21 @@ Route::get('absen', function () {
     ];
     return view('absen', compact('data'));
 });
+
+Route::get('siswa', function () {
+    $siswas =[
+        ['id' => 1,
+        'nama' => 'irfan fadillah',
+        'username' => 'irfanfdll',
+        'email' => 'irfanfdlhh0@gmail.com',
+        'alamat' => 'Bandung',
+        'mapel' => [
+                    'mapel1' => 'Bahasa Indonesia',
+                    'mapel2' => 'Bahasa Inggris',
+                    'mapel3' => 'Bahasa Jepang',
+                    'mapel4' => 'Bahasa Belanda',
+                   ]
+         ],
+    ];
+    return view('siswa', compact('siswas'));
+});
