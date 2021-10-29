@@ -33,16 +33,7 @@ Route::get('biodata', function () {
 
 });
 
-Route::get('biodata2', function () {
-     $nama = "Irfan";
-     $jk ="Laki-laki";
-     $tempat_lahir="Bandung";
-     $tanggal_lahir="30 Juli 2003";
-     $alamat="Sekeawi";
-     $agama="Islam";
-     $hobi="Memancing";
-    return view('biodata',compact('nama','jk','tempat_lahir','tanggal_lahir','alamat','agama','hobi'));
-});
+
 
 Route::get('/input/{nama}/{jk}/{tl}/{tgllahir}/{alamat}/{agama}/{hobi}', function ($nama, $jk, $tl, $tgllahir, $alamat, $agama, $hobi) {
     echo "Nama Saya:" . $nama . "<br>
@@ -53,6 +44,12 @@ Route::get('/input/{nama}/{jk}/{tl}/{tgllahir}/{alamat}/{agama}/{hobi}', functio
         Agama: " . $agama . "<br>
         Hobi: " . $hobi;
 });
+
+Route::get('/inputt/{nama?}/{kelas?}', function ($nama=null,$kelas=null) {
+    echo "Nama Saya:" . $nama . "<br>";
+    echo "Kelas:" . $kelas . "<br>";
+});
+
 
 Route::get('blog', function () {
     $data = [
