@@ -93,3 +93,26 @@ Route::get('siswa', function () {
     ];
     return view('siswa', compact('siswas'));
 });
+
+
+Route::get('/inputnilai/{nama?}/{mtk?}/{pro?}/{indo?}/{ingris?}', function ($nama=null,$mtk=0,$pro=0,$indo=0,$ingris=0) {
+    echo "Nama Saya:" . $nama . "<br>";
+    echo "Nialai Maatematika : " . $mtk . "<br>";
+    echo "Nialai Produktif : " . $pro . "<br>";
+    echo "Nialai Bahasa Indonesia :  " . $indo . "<br>";
+    echo "Nialai Bahsa Inggris : " . $ingris . "<br>";
+
+    $ratarata =($mtk + $pro + $indo + $ingris)/4;
+
+    echo "Rata-rata :". $ratarata ."<br>";
+    echo "Grade : ";
+    if ($ratarata >= 90) {
+        echo "A";
+    } elseif ($ratarata >=80) {
+        echo "B";
+    } elseif ($ratarata >=70) {
+        echo "C";
+    } else {
+        echo "D";
+    }
+});
