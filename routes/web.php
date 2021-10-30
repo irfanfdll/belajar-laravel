@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use PhpParser\Node\Stmt\Else_;
 
 /*
 |--------------------------------------------------------------------------
@@ -116,3 +117,19 @@ Route::get('/inputnilai/{nama?}/{mtk?}/{pro?}/{indo?}/{ingris?}', function ($nam
         echo "D";
     }
 });
+
+Route::get('/pesan/{makanan?}/{minuman?}/{cemilan?}', function ($makanan=null,$minuman=null,$cemilan=null) {
+
+    if ($makanan = $makanan) {
+        echo "Makan : ".$makanan ."<br>";
+        if ($minuman = $minuman) {
+            echo "Minuman : " . $minuman."<br>";
+        }if ($cemilan= $cemilan) {
+            echo "Cemilan : ".$cemilan."<br>";
+        }
+    }else {
+      echo "Anda tidak memesan silahkan pulang";
+    }
+});
+
+
