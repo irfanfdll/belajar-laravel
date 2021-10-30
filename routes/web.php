@@ -121,15 +121,20 @@ Route::get('/inputnilai/{nama?}/{mtk?}/{pro?}/{indo?}/{ingris?}', function ($nam
 Route::get('/pesan/{makanan?}/{minuman?}/{cemilan?}', function ($makanan=null,$minuman=null,$cemilan=null) {
 
     if ($makanan = $makanan) {
-        echo "Makan : ".$makanan ."<br>";
+        echo "<b>Anda memesan <br> Makan : </b>".$makanan ."<br>";
         if ($minuman = $minuman) {
-            echo "Minuman : " . $minuman."<br>";
+            echo "<b>Minuman : </b>" . $minuman."<br>";
         }if ($cemilan= $cemilan) {
-            echo "Cemilan : ".$cemilan."<br>";
+            echo "<b>Cemilan : </b>".$cemilan."<br>";
         }
     }else {
       echo "Anda tidak memesan silahkan pulang";
     }
 });
 
+// menampilkan data post
+Route::get('/testmodel', function() {
+    $query = App\Models\Post::all() ;
+    return $query;
+    });
 
